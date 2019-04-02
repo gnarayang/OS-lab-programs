@@ -76,7 +76,11 @@ int main()
 			siz = ceilDivision(siz, blockCapacity);
 			printf("Enter the starting and ending location\n");
 			scanf("%d%d", &starting, &ending);
-			if(blocks[starting]!= -1 && blocks[ending]!= -1)
+			if(starting < 0 || starting >= n || ending < 0 || ending >= n || starting == ending)
+			{
+				printf("Entered addresses are not valid\n");
+			}
+			else if(blocks[starting]!= -1 && blocks[ending]!= -1)
 			{
 				printf("Entered starting and ending index is not empty\n");
 			}
